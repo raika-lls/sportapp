@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Создать клуб</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="create-club" class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><img src="logo.svg" alt="SportLink" class="sidebar-logo" /><h2>SportLink</h2></div>
+    <nav class="sidebar-nav">
+      <a href="home.html">Главная</a>
+      <a href="clubs.html">Клубы</a>
+      <a href="matches.html">Матчи</a>
+      <a href="profile.html">Профиль</a>
+      <a href="create-club.html" class="active">Создать клуб</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Выйти</button>
+  </aside>
+
+  <main class="app-content">
+    <header class="topbar"><button id="menuToggle">☰</button><h1>Создать клуб</h1></header>
+    <section class="card hero-card">
+      <span class="hero-card__eyebrow">create your own club</span>
+      <h2>Сделай свой спортивный бренд внутри SportLink</h2>
+      <p>Оформи заявку красиво: придумай клуб, задай атмосферу и собери людей вокруг своей идеи.</p>
+      <div class="info-strip">
+        <div class="info-mini"><b>1–2 дня</b><span>рассмотрение заявки</span></div>
+        <div class="info-mini"><b>2500 ₸</b><span>подача заявки</span></div>
+        <div class="info-mini"><b>online</b><span>быстрое оформление</span></div>
+      </div>
+    </section>
+
+    <section class="card compact-card">
+      <form id="clubCreateForm" class="app-form">
+        <div class="input-group"><label for="clubName">Название</label><input type="text" id="clubName" required placeholder="Green Volley" /></div>
+        <div class="input-group"><label for="clubSport">Спорт</label><select id="clubSport" required><option value="">Выбери</option><option value="football">Футбол</option><option value="volleyball">Волейбол</option><option value="basketball">Баскетбол</option><option value="running">Бег</option><option value="swimming">Плавание</option></select></div>
+        <div class="input-group"><label for="clubLevel">Уровень</label><select id="clubLevel" required><option value="">Выбери</option><option value="beginner">Новичок</option><option value="mixed">Средний</option><option value="advanced">Продвинутый</option></select></div>
+        <div class="input-group"><label for="clubVibe">Формат</label><select id="clubVibe" required><option value="">Выбери</option><option value="chill">Спокойный</option><option value="friendly">Дружелюбный</option><option value="community">Комьюнити</option><option value="competitive">Соревновательный</option></select></div>
+        <div class="input-group"><label for="clubCity">Город</label><input type="text" id="clubCity" required placeholder="Астана" /></div>
+        <div class="input-group"><label for="clubAbout">Коротко о клубе</label><textarea id="clubAbout" required placeholder="2–3 предложения"></textarea></div>
+        <div class="note-box"><strong>Подача заявки: 2500 ₸</strong><p>Заполни короткие данные и отправь заявку в клубное пространство.</p></div>
+        <button type="button" class="primary-btn" id="openPaymentModalBtn">Продолжить</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="app-modal" id="paymentModal">
+    <div class="app-modal__overlay" id="paymentOverlay"></div>
+    <div class="app-modal__content">
+      <button class="app-modal__close" id="closePaymentModalBtn" type="button">×</button>
+      <h3>Оплата размещения</h3>
+      <p class="muted-text">Заверши оформление, и заявка сразу уйдёт в модерацию.</p>
+      <form id="paymentForm" class="app-form">
+        <div class="payment-variants">
+          <label class="payment-option active"><input type="radio" name="paymentMethod" value="Kaspi" checked /><span>Kaspi</span></label>
+          <label class="payment-option"><input type="radio" name="paymentMethod" value="Halyk" /><span>Halyk</span></label>
+          <label class="payment-option"><input type="radio" name="paymentMethod" value="Card" /><span>Card</span></label>
+        </div>
+        <div class="payment-method-note">
+          <div><strong>Размещение нового клуба</strong><span>Единоразовый платёж перед отправкой заявки</span></div>
+          <div class="payment-security"><span class="mini-tag">Быстро</span><span class="mini-tag">1–2 дня</span></div>
+        </div>
+        <div class="input-group"><label for="cardHolder">Имя владельца</label><input type="text" id="cardHolder" required placeholder="Arailym Orynbek" /></div>
+        <div class="input-group"><label for="cardNumber">Номер карты или счёта</label><input type="text" id="cardNumber" required placeholder="4400 1234 5678 9012" /></div>
+        <div class="payment-row">
+          <div class="input-group"><label for="cardDate">Срок действия</label><input type="text" id="cardDate" required placeholder="12 / 28" /></div>
+          <div class="input-group"><label for="cardCvv">CVV</label><input type="password" id="cardCvv" required placeholder="***" maxlength="4" /></div>
+        </div>
+        <div class="payment-total"><span>К оплате</span><strong>2 500 ₸</strong></div>
+        <button type="submit" class="primary-btn" id="submitPaymentBtn">Оплатить и отправить</button>
+      </form>
+      <div class="payment-process" id="paymentProcess">
+        <div class="payment-total"><span>Статус оплаты</span><strong id="paymentProgressText">Подготавливаем…</strong></div>
+        <div class="payment-progress"><div class="payment-progress__bar" id="paymentProgressBar"></div></div>
+        <div class="payment-step-list">
+          <div class="payment-step" id="stepVerify"><b>Проверяем реквизиты</b><i>безопасная проверка</i></div>
+          <div class="payment-step" id="stepConfirm"><b>Подтверждаем оплату</b><i>банк обрабатывает запрос</i></div>
+          <div class="payment-step" id="stepCreate"><b>Создаём заявку</b><i>добавляем в модерацию</i></div>
+        </div>
+      </div>
+      <div class="payment-success" id="paymentSuccess">
+        <div class="payment-success__icon">✓</div>
+        <h3>Оплата прошла успешно</h3>
+        <p class="muted-text">Клуб отправлен на рассмотрение. Статус и уведомление уже появились в профиле.</p>
+        <div class="payment-success__meta">
+          <div><span>Сумма</span><strong>2 500 ₸</strong></div>
+          <div><span>Статус</span><strong>Принято</strong></div>
+          <div><span>Далее</span><strong>Проверка 1–2 дня</strong></div>
+        </div>
+        <button type="button" class="primary-btn" id="goProfileAfterPayment">Перейти в профиль</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

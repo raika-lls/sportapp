@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Опрос</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="survey" class="screen screen--center">
+  <main class="survey-shell">
+    <section class="survey-card survey-card--solo">
+      <div class="survey-top">
+        <img src="logo.svg" alt="SportLink" class="auth-logo auth-logo--pulse" />
+        <h1>Подберём твой формат</h1>
+        <p>За минуту соберём красивую персональную ленту клубов и матчей именно под тебя.</p>
+      </div>
+
+      <form id="appSurveyForm" class="survey-form">
+        <div class="input-group">
+          <label for="surveyGoal">Что тебе сейчас ближе?</label>
+          <select id="surveyGoal" name="goal" required>
+            <option value="">Выбери</option>
+            <option value="start">Начать с нуля</option>
+            <option value="team">Найти команду</option>
+            <option value="fun">Играть по фану</option>
+            <option value="compete">Расти до турниров</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="surveyLevel">Какой у тебя уровень?</label>
+          <select id="surveyLevel" name="level" required>
+            <option value="">Выбери</option>
+            <option value="beginner">Новичок</option>
+            <option value="mixed">Средний</option>
+            <option value="advanced">Продвинутый</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="surveyVibe">Какой формат тебе комфортен?</label>
+          <select id="surveyVibe" name="vibe" required>
+            <option value="">Выбери</option>
+            <option value="chill">Спокойный</option>
+            <option value="friendly">Дружелюбный</option>
+            <option value="community">Комьюнити</option>
+            <option value="competitive">Соревновательный</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="surveySport">Что интереснее всего?</label>
+          <select id="surveySport" name="sport" required>
+            <option value="">Выбери</option>
+            <option value="football">Футбол</option>
+            <option value="volleyball">Волейбол</option>
+            <option value="basketball">Баскетбол</option>
+            <option value="running">Бег</option>
+            <option value="swimming">Плавание</option>
+          </select>
+        </div>
+
+        <button type="submit" class="primary-btn">Продолжить</button>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Подбор</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="filter-results" class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><img src="logo.svg" alt="SportLink" class="sidebar-logo" /><h2>SportLink</h2></div>
+    <nav class="sidebar-nav">
+      <a href="home.html">Главная</a>
+      <a href="clubs.html">Клубы</a>
+      <a href="matches.html">Матчи</a>
+      <a href="profile.html">Профиль</a>
+      <a href="create-club.html">Создать клуб</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Выйти</button>
+  </aside>
+
+  <main class="app-content">
+    <header class="topbar"><button id="menuToggle">☰</button><h1>Подбор</h1></header>
+    <section class="card hero-card">
+      <span class="hero-card__eyebrow">smart results</span>
+      <h2>Персональный подбор под твой стиль игры</h2>
+      <p>Здесь собраны клубы и события, которые ближе всего к твоему опросу и фильтрам.</p>
+    </section>
+    <section class="card compact-card"><h3>Твои параметры</h3><div class="tag-row" id="activeFiltersBox"></div></section>
+    <section class="card compact-card"><div class="section-row"><h3>Подходящие клубы</h3><a href="clubs.html" class="secondary-btn small-btn">Назад</a></div><div class="mobile-cards" id="clubsResultsList"></div></section>
+    <section class="card compact-card"><div class="section-row"><h3>Подходящие события</h3><a href="matches.html" class="secondary-btn small-btn">Назад</a></div><div class="mobile-cards" id="eventsResultsList"></div></section>
+    <section class="card compact-card" id="otherKindsSection" style="display:none;"><h3>Другие виды — вам понравится</h3><div class="mobile-cards" id="otherKindsList"></div></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

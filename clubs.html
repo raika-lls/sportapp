@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Клубы</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="clubs" class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><img src="logo.svg" alt="SportLink" class="sidebar-logo" /><h2>SportLink</h2></div>
+    <nav class="sidebar-nav">
+      <a href="home.html">Главная</a>
+      <a href="clubs.html" class="active">Клубы</a>
+      <a href="matches.html">Матчи</a>
+      <a href="profile.html">Профиль</a>
+      <a href="create-club.html">Создать клуб</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Выйти</button>
+  </aside>
+
+  <main class="app-content">
+    <header class="topbar"><button id="menuToggle">☰</button><h1>Клубы</h1></header>
+
+    <section class="card hero-card">
+      <span class="hero-card__eyebrow">find your people</span>
+      <h2>Клубы по вайбу, а не просто по тексту</h2>
+      <p>Выбирай не только спорт, но и атмосферу: chill, комьюнити, серьёзные тренировки или турнирный настрой.</p>
+      <div class="filter-hero">
+        <span class="filter-pill">⚽ футбол</span>
+        <span class="filter-pill">🏐 волейбол</span>
+        <span class="filter-pill">🏀 баскетбол</span>
+        <span class="filter-pill">🏃 бег</span>
+      </div>
+    </section>
+
+    <section class="card compact-card">
+      <h3>Подбор клуба</h3>
+      <div class="app-filters">
+        <div class="input-group"><label for="goal">Цель</label><select id="goal"><option value="">Любая</option><option value="start">Начать</option><option value="team">Команда</option><option value="fun">Фан</option><option value="compete">Турниры</option></select></div>
+        <div class="input-group"><label for="level">Уровень</label><select id="level"><option value="">Любой</option><option value="beginner">Новичок</option><option value="mixed">Средний</option><option value="advanced">Продвинутый</option></select></div>
+        <div class="input-group"><label for="vibe">Формат</label><select id="vibe"><option value="">Любой</option><option value="chill">Спокойный</option><option value="friendly">Дружелюбный</option><option value="community">Комьюнити</option><option value="competitive">Соревновательный</option></select></div>
+        <div class="input-group"><label for="sport">Спорт</label><select id="sport"><option value="">Любой</option><option value="football">Футбол</option><option value="volleyball">Волейбол</option><option value="basketball">Баскетбол</option><option value="running">Бег</option><option value="swimming">Плавание</option></select></div>
+      </div>
+      <button class="primary-btn" id="applyClubFiltersBtn">Показать подбор</button>
+    </section>
+
+    <section class="card compact-card">
+      <h3>Популярные клубы</h3>
+      <div class="mobile-cards" id="clubsList"></div>
+    </section>
+  </main>
+
+  <div class="app-modal" id="clubModal">
+    <div class="app-modal__overlay" id="clubModalOverlay"></div>
+    <div class="app-modal__content sheet-content">
+      <button class="app-modal__close" id="closeClubModalBtn" type="button">×</button>
+      <div id="clubModalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

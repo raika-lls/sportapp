@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Профиль</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="profile" class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><img src="logo.svg" alt="SportLink" class="sidebar-logo" /><h2>SportLink</h2></div>
+    <nav class="sidebar-nav">
+      <a href="home.html">Главная</a>
+      <a href="clubs.html">Клубы</a>
+      <a href="matches.html">Матчи</a>
+      <a href="profile.html" class="active">Профиль</a>
+      <a href="create-club.html">Создать клуб</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Выйти</button>
+  </aside>
+
+  <main class="app-content">
+    <header class="topbar"><button id="menuToggle">☰</button><h1>Профиль</h1></header>
+
+    <section class="card hero-card profile-banner">
+      <span class="hero-card__eyebrow">your sport identity</span>
+      <div class="profile-head">
+        <div class="profile-avatar large-avatar" id="profileAvatar">U</div>
+        <div>
+          <h2 id="profileName">Пользователь</h2>
+          <p id="profileEmail">example@mail.com</p>
+        </div>
+      </div>
+      <div class="profile-stats-row">
+        <div class="mini-stat"><strong id="clubsCount">0</strong><span>Клубы</span></div>
+        <div class="mini-stat"><strong id="eventsCount">0</strong><span>События</span></div>
+        <div class="mini-stat"><strong id="notificationsCount">0</strong><span>Увед.</span></div>
+      </div>
+    </section>
+
+    <section class="card compact-card">
+      <div class="section-row"><h3>Мой опрос</h3><a href="survey.html" class="secondary-btn small-btn">Изменить</a></div>
+      <div class="mobile-cards small-gap">
+        <div class="app-item-card small-card"><strong>Цель</strong><p id="surveyGoalText">—</p></div>
+        <div class="app-item-card small-card"><strong>Уровень</strong><p id="surveyLevelText">—</p></div>
+        <div class="app-item-card small-card"><strong>Формат</strong><p id="surveyVibeText">—</p></div>
+        <div class="app-item-card small-card"><strong>Спорт</strong><p id="surveySportText">—</p></div>
+      </div>
+    </section>
+
+    <section class="card compact-card"><h3>Мои клубы</h3><div class="mobile-cards" id="joinedClubsList"></div></section>
+    <section class="card compact-card"><h3>Мои события</h3><div class="mobile-cards" id="bookedEventsList"></div></section>
+    <section class="card compact-card"><h3>Уведомления</h3><div class="mobile-cards" id="notificationsList"></div></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

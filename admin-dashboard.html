@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="admin-dashboard" class="app-layout admin-layout">
+  <aside class="sidebar sidebar--admin" id="sidebar">
+    <div class="sidebar-header"><img src="logo.svg" alt="SportLink" class="sidebar-logo" /><h2>Admin</h2></div>
+    <nav class="sidebar-nav"><a href="admin-dashboard.html" class="active">Статистика</a><a href="home.html">В приложение</a></nav>
+    <button class="logout-btn" id="adminLogoutBtn">Выйти</button>
+  </aside>
+
+  <main class="app-content">
+    <header class="topbar"><button id="menuToggle">☰</button><h1>Админ-панель</h1></header>
+    <section class="card hero-card">
+      <span class="hero-card__eyebrow">platform analytics</span>
+      <h2>Вся активность SportLink в одной визуальной панели</h2>
+      <p>Смотри, как растёт активность платформы: пользователи, клубы, события и общая динамика по приложению.</p>
+    </section>
+    <section class="card compact-card"><h3>Общая статистика</h3><div class="admin-stats-grid"><div class="admin-stat-card"><span>Пользователи</span><strong id="usersCount">0</strong></div><div class="admin-stat-card"><span>Создано клубов</span><strong id="clubsCreatedCount">0</strong></div><div class="admin-stat-card"><span>Вступления в клубы</span><strong id="clubJoinsCount">0</strong></div><div class="admin-stat-card"><span>Оплаты</span><strong id="paymentsCount">0</strong></div><div class="admin-stat-card"><span>Матчи</span><strong id="matchesCount">0</strong></div><div class="admin-stat-card"><span>Турниры</span><strong id="tournamentsCount">0</strong></div></div></section>
+    <section class="card compact-card"><h3>Финансы</h3><div class="admin-finance-row"><div class="finance-box"><span>Оплаты за создание клуба</span><strong id="clubPaymentsTotal">0 ₸</strong></div><div class="finance-box"><span>Оплаты за события</span><strong id="eventsPaymentsTotal">0 ₸</strong></div><div class="finance-box finance-box--accent"><span>Общий объём оплат</span><strong id="allPaymentsTotal">0 ₸</strong></div></div></section>
+    <section class="card compact-card"><h3>Диаграммы</h3><div class="charts-grid"><div class="chart-card"><div class="chart-head"><strong>События</strong></div><div class="bar-chart"><div class="bar-row"><span>Пробные</span><div class="bar-track"><div class="bar-fill" id="trialBar"></div></div><b id="trialCount">0</b></div><div class="bar-row"><span>Матчи</span><div class="bar-track"><div class="bar-fill" id="matchBar"></div></div><b id="matchCount">0</b></div><div class="bar-row"><span>Турниры</span><div class="bar-track"><div class="bar-fill" id="tournamentBar"></div></div><b id="tournamentCount">0</b></div></div></div><div class="chart-card"><div class="chart-head"><strong>Активность платформы</strong></div><div class="pie-legend"><div class="pie-legend__item"><span class="legend-dot legend-dot--green"></span><p>Вступления в клубы: <b id="legendClubJoins">0</b></p></div><div class="pie-legend__item"><span class="legend-dot legend-dot--white"></span><p>Записи на события: <b id="legendEventBookings">0</b></p></div><div class="pie-legend__item"><span class="legend-dot legend-dot--gray"></span><p>Новые клубы: <b id="legendClubRequests">0</b></p></div></div><div class="activity-ring"><div class="activity-ring__center"><strong id="activityTotal">0</strong><span>действий</span></div></div></div></div></section>
+    <section class="card compact-card"><div class="section-row"><h3>Последние заявки на клуб</h3></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Пользователь</th><th>Клуб</th><th>Спорт</th><th>Статус</th><th>Дата</th></tr></thead><tbody id="clubRequestsTable"><tr><td colspan="5">Пока нет данных</td></tr></tbody></table></div></section>
+    <section class="card compact-card"><div class="section-row"><h3>Последние оплаты</h3></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Пользователь</th><th>Тип</th><th>Сумма</th><th>Метод</th><th>Дата</th></tr></thead><tbody id="paymentsTable"><tr><td colspan="5">Пока нет данных</td></tr></tbody></table></div></section>
+    <section class="card compact-card"><div class="section-row"><h3>Последние записи на события</h3></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Пользователь</th><th>Событие</th><th>Тип</th><th>Сумма</th><th>Дата</th></tr></thead><tbody id="eventBookingsTable"><tr><td colspan="5">Пока нет данных</td></tr></tbody></table></div></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Матчи</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="matches" class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><img src="logo.svg" alt="SportLink" class="sidebar-logo" /><h2>SportLink</h2></div>
+    <nav class="sidebar-nav">
+      <a href="home.html">Главная</a>
+      <a href="clubs.html">Клубы</a>
+      <a href="matches.html" class="active">Матчи</a>
+      <a href="profile.html">Профиль</a>
+      <a href="create-club.html">Создать клуб</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Выйти</button>
+  </aside>
+
+  <main class="app-content">
+    <header class="topbar"><button id="menuToggle">☰</button><h1>Матчи</h1></header>
+
+    <section class="card hero-card">
+      <span class="hero-card__eyebrow">play tonight</span>
+      <h2>Матчи и ивенты, куда реально хочется записаться</h2>
+      <p>Пробные игры, открытые матчи и мини-турниры — всё в визуальной подборке, а не просто списком.</p>
+      <div class="filter-hero">
+        <span class="filter-pill">🎟 пробные</span>
+        <span class="filter-pill">🔥 матчи</span>
+        <span class="filter-pill">🏆 турниры</span>
+        <span class="filter-pill">📍 nearby</span>
+      </div>
+    </section>
+
+    <section class="card compact-card">
+      <h3>Подбор событий</h3>
+      <div class="app-filters">
+        <div class="input-group"><label for="eventType">Тип</label><select id="eventType"><option value="">Любой</option><option value="trial">Пробный</option><option value="match">Матч</option><option value="tournament">Турнир</option></select></div>
+        <div class="input-group"><label for="eventLevel">Уровень</label><select id="eventLevel"><option value="">Любой</option><option value="beginner">Новичок</option><option value="mixed">Средний</option><option value="advanced">Продвинутый</option></select></div>
+        <div class="input-group"><label for="eventVibe">Формат</label><select id="eventVibe"><option value="">Любой</option><option value="chill">Спокойный</option><option value="friendly">Дружелюбный</option><option value="community">Комьюнити</option><option value="competitive">Соревновательный</option></select></div>
+        <div class="input-group"><label for="eventSport">Спорт</label><select id="eventSport"><option value="">Любой</option><option value="football">Футбол</option><option value="volleyball">Волейбол</option><option value="basketball">Баскетбол</option><option value="running">Бег</option><option value="swimming">Плавание</option></select></div>
+      </div>
+      <button class="primary-btn" id="applyMatchFiltersBtn">Показать подбор</button>
+    </section>
+
+    <section class="card compact-card">
+      <h3>Ближайшие события</h3>
+      <div class="mobile-cards" id="eventsList"></div>
+    </section>
+  </main>
+
+  <div class="app-modal" id="eventModal">
+    <div class="app-modal__overlay" id="eventModalOverlay"></div>
+    <div class="app-modal__content sheet-content">
+      <button class="app-modal__close" id="closeEventModalBtn" type="button">×</button>
+      <div id="eventModalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

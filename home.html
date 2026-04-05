@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Главная</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="home" class="app-layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header"><img src="logo.svg" alt="SportLink" class="sidebar-logo" /><h2>SportLink</h2></div>
+    <nav class="sidebar-nav">
+      <a href="home.html" class="active">Главная</a>
+      <a href="clubs.html">Клубы</a>
+      <a href="matches.html">Матчи</a>
+      <a href="profile.html">Профиль</a>
+      <a href="create-club.html">Создать клуб</a>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Выйти</button>
+  </aside>
+
+  <main class="app-content">
+    <header class="topbar"><button id="menuToggle">☰</button><h1>Главная</h1></header>
+
+    <section class="card hero-card">
+      <span class="hero-card__eyebrow">sport • community • match</span>
+      <h2 id="welcomeText">Привет</h2>
+      <p>Находи клубы, собирай команду и записывайся на спортивные события в одном красивом пространстве.</p>
+      <div class="hero-card__chips">
+        <span class="hero-chip">⚽ клубы рядом</span>
+        <span class="hero-chip">🏆 подбор под уровень</span>
+        <span class="hero-chip">🤝 своё комьюнити</span>
+      </div>
+      <div class="stats-strip">
+        <div class="stat-pill"><strong>12+</strong><span>активных клубов</span></div>
+        <div class="stat-pill"><strong>24/7</strong><span>быстрый подбор</span></div>
+        <div class="stat-pill"><strong>5</strong><span>видов спорта</span></div>
+      </div>
+    </section>
+
+    <section class="card compact-card">
+      <div class="section-row"><h3>Тебе подойдёт</h3><a href="filter-results.html" class="secondary-btn small-btn">Смотреть всё</a></div>
+      <div class="mobile-cards" id="homeRecommendations"></div>
+    </section>
+
+    <section class="card compact-card">
+      <div class="section-row"><h3>Быстрые действия</h3></div>
+      <div class="actions">
+        <a href="clubs.html" class="action-btn">⚽ Клубы</a>
+        <a href="matches.html" class="action-btn">🎟 Матчи</a>
+        <a href="create-club.html" class="action-btn">✨ Создать</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

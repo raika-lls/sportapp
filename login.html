@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportLink — Вход</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="login" class="screen screen--center">
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="auth-top">
+        <img src="logo.svg" alt="SportLink" class="auth-logo auth-logo--pulse" />
+        <h1>SportLink</h1>
+        <p>Стильное спортивное пространство для клубов, матчей и своего комьюнити.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="showLoginTab" type="button">Вход</button>
+        <button class="auth-tab" id="showRegisterTab" type="button">Регистрация</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <div class="input-group">
+          <label for="loginEmail">Почта или логин</label>
+          <input type="text" id="loginEmail" placeholder="example@mail.com или admin" required />
+        </div>
+
+        <div class="input-group">
+          <label for="loginPassword">Пароль</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" required />
+        </div>
+
+        <button type="submit" class="primary-btn">Войти</button>
+      </form>
+
+      <form id="registerForm" class="auth-form hidden">
+        <div class="input-group">
+          <label for="registerName">Имя</label>
+          <input type="text" id="registerName" placeholder="Твоё имя" required />
+        </div>
+
+        <div class="input-group">
+          <label for="registerEmail">Почта</label>
+          <input type="email" id="registerEmail" placeholder="example@mail.com" required />
+        </div>
+
+        <div class="input-group">
+          <label for="registerPassword">Пароль</label>
+          <input type="password" id="registerPassword" placeholder="Минимум 4 символа" required />
+        </div>
+
+        <button type="submit" class="primary-btn">Создать аккаунт</button>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
